@@ -1,0 +1,186 @@
+/*
+*{
+    box-sizing: border-box;
+}
+*/
+
+html, body, figure, figcaption, img{
+    margin: 0;
+    padding: 0;
+}
+
+figure{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+img{
+    position: relative;
+}
+
+figure::before{
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: -9px;
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: 7px;
+}
+
+figure:hover::before{
+    animation: animate 1s linear forwards;
+}
+
+@keyframes animate{
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: #000;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    50%{
+        width: 100%;
+        height: 0;
+        border-top-color: #000;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    100%{
+        width: 100%;
+        height: 50%;
+        border-top-color: #000;
+        border-right-color: #000;
+        border-bottom-color: transparent;
+        border-left-color: #000;
+    }
+}
+
+figure::after{
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: -9px;
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: 7px;
+    transform: rotate(360);
+}
+
+figure:hover::after{
+    animation: animate2 1s linear forwards;
+}
+
+@keyframes animate2{
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: #000;
+        border-left-color: transparent;
+    }
+    50%{
+        width: 100%;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: #000;
+        border-left-color: transparent;
+    }
+    100%{
+        width: 100%;
+        height: 50%;
+        border-top-color: transparent;
+        border-right-color: #000;
+        border-bottom-color: #000;
+        border-left-color: #000;
+    }
+}
+
+figcaption{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 3;
+}
+
+figcaption::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 20%;
+    background-color: #000;
+    opacity: 0;
+    z-index: 2;
+    color: #fff;
+}
+
+figcaption:hover::before{
+    animation: animate3 1s linear forwards;
+}
+
+@keyframes animate3{
+    0%{
+        opacity: 0;
+        height: 20%;
+        width: 100%;
+    }
+    50%{
+        opacity: 0.8;
+        height: 20%;
+        width: 102.5%;
+    }
+    100%{
+        opacity: 0.8;
+        height: 40%;
+        width: 102.5%;
+    }
+}
+figcaption::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 20%;
+    font-size: 4rem;
+    opacity: 0;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+}
+
+figcaption:hover::after{
+    animation: animate4 1s linear forwards;
+}
+
+@keyframes animate4{
+    0%{
+        opacity: 0;
+        content: "";
+        
+    }
+    100%{
+        opacity: 1;
+        content: "Lake View";
+        
+    }
+}
